@@ -10,7 +10,6 @@ let c =++a;
 //prediction 3
 console.log(c);
 //answer 3
-
 let d="hello";
 //hello
 console.log(d);
@@ -39,11 +38,11 @@ price.toFixed(2);
 console.log(price);
 //answer 2.7
 
-let price1 = "2.7";
-price.toFixed(2);
-//prediction NaN
-console.log(price1);
-//answer 2.7 as a string
+// let price1 = "2.7";
+// price1.toFixed(2);
+// //prediction NaN
+// console.log(price1);
+//answer error
 
 // isNaN(0)
 // //prediction false
@@ -57,7 +56,7 @@ console.log(price1);
 
 
 // isNaN("");
-// //prediction true
+// //prediction false
 // console.log(isNaN(""));
 // //answer false
 
@@ -202,9 +201,9 @@ message= sample + str;
 
 console.log(`${message.indexOf("c")}`);
 console.log(`${message.indexOf("C")}`);
-let begining =sample.indexOf(" ");
+let beginning =sample.indexOf(" ");
 let end =sample.indexOf("p");
-let message1=sample.substring(begining , end+1);
+let message1=sample.substring(beginning , end+1);
 console.log( message1 );
 
 let tlm=3;
@@ -217,7 +216,7 @@ let google =400*6;
 let amazon =380*4;
 let facebook =350*10;
 let work =google+amazon+facebook;
-console.log(`$ ${work}`);
+console.log(`money eared this week $${work}`);
 
 
 let openclass = true;
@@ -251,3 +250,4 @@ let maxchar = password.length <=20;
 console.log(maxchar);
 let whitespace = password.indexOf(" ") >=0 && username.indexOf(" ") >= 0;
 console.log(whitespace);
+
