@@ -53,14 +53,15 @@
      *  > second([1, 2, 3, 4, 5]) // returns 2
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
-   // const first=()=>{
+   const first=()=>{
     let numbers = [1,2,3,4,5];
-    numbers.forEach((element,index)=>{
-        let first =numbers[1,0] ;
-        console.log(`here is the first function: `+first);
+    //numbers.forEach((element,index)=>{
+        let first1 =numbers[1,0] ;
+        console.log(`here is the first function: `+first1);
         let second = numbers[2,1];
         console.log(`here is the second function: `+second);
         let last = numbers[5,4];
         console.log(`here is the last function: `+last);
-    })
+    }
+    first();
 })();
