@@ -11,12 +11,12 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-const name={
+const person={
     firstName:'sarah',
     lastName:'brightman',
     }
-    console.log(name.firstName);
-    console.log(name.lastName);
+    console.log(person.firstName);
+    console.log(person.lastName);
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -26,12 +26,13 @@ const name={
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-
-    let sayHello ="Hello form: "
-   console.log();
-
+    person.sayHello = function(){
+        let sayHello = `hello from: ${this.firstName} ${this.lastName}`
+        return sayHello;
+    };
+    // console.log(person.sayHello());
     /** TODO:
-     * HEB has an offer for the shoppers that buy products amounting to
+     * HEB has an  offer for the shoppers that buy products amounting to
      * more than $200. If a shopper spends more than $200, they get a 12%
      * discount. Write a JS program, using conditionals, that logs to the
      * browser, how much Ryan, Cameron and George need to pay. We know that
@@ -44,11 +45,21 @@ const name={
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+//     let shoppers = [
+//         {name: 'Cameron', amount: 180},
+//         {name: 'Ryan', amount: 250},
+//         {name: 'George', amount: 320}
+//     ];xcode
+// shoppers.forEach(function(shopper){
+//     let discount = shopper.amount * .12;
+//     if(shopper.amount >=200){
+//         console.log(`here is the shopper ${shopper.name} and here is the discounted price ${discount} here is your price before discount ${shopper.amount}`);
+//     }else {
+//         console.log(`here is the shopper ${shopper.name} and there was no discounted price so here is your ${shopper.amount}`)
+//     }
+// });
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -62,7 +73,21 @@ const name={
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+let books=[
+    {title: 'where the red fern grows', authorFirst:'Wilson', last:' Rawls'},
+    {title:'It',authorFirst:'Steven', last:' King'},
+    {title: 'the cat in the hat',authorFirst:'Dr.',last:'Suess'},
+    {title: 'old yeller',authorFirst:'Fred',last:' Gipson'},
+    {title: 'a Christmas carol',authorFirst: 'Charles',last:' Dickens'}
+];
+books.forEach(function (book,index){
+    let author = book.authorFirst + book.last;
+    console.log(`${index} is the index of ${book.title} by ${author}`)
+})
+// console.log(books[0].title);
+// console.log(books[0].authorFirst);
+// console.log(books[0].last);
+//
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -98,5 +123,12 @@ const name={
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+function createBook(title,author){
+    let book={title:title, author:{first:"",last:""}}
+    author= author.split(" ");
+     book.author.first= author[0];
+     book.author.last=author[1];
+    return book;
+    }
 
 })();
