@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+h1{
+    color: #a98294;
+    text-align: center;
+    text-decoration:underline;
+    font-family: 'Inconsolata', monospace;
+    font-size: 55px;
+}
+p{
+    color: #9c889f;
+    font-family: 'Inconsolata', monospace;
+    font-size: 15px;
+}
+table{
+    color: #8da48f;
+    text-align: center;
+}
+h2{
+    color: #9ebd9e;
+    font-family: 'Inconsolata', monospace;
+    border-bottom:3px dotted #fad0d0;
+    margin: 25px;
+    text-align: center;
+}
+header{
+    background-color: #2d0918;
+    margin:10px;
+    padding: 15px;
+}
+.images{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #2d0918;
+    padding: 30px;
+    margin: 10px;
+}
+.text-center{
+    text-align: center;
+}
+ol, ul{
+    list-style: square;
+    color: #9f929f;
+}
+body{
+    background-image: url("/img/pexels-irina-iriser-1379620.jpg" )  ;
+    background-size:20% ;
+    background-color: #cce0c9;
+    border: 5px solid #384236;
+}
+.lists {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Inconsolata', monospace;
+}
+.table-head{
+    text-align: center;
+    font-family: 'Inconsolata', monospace;
+}
+.table-info{
+    display: table;
+    font-family: 'Inconsolata', monospace;
+    background-color: #374938;
+    padding:30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+a:link {
+    color: #efc2c2;
+    font-family: 'Inconsolata', monospace;
+}
+footer{
+    text-align: right;
+    margin: 10px;
+}
+a:visited {
+    color: #8da27e;
+    font-family: 'Inconsolata', monospace;
+}
+
+a:hover {
+    color: #eac6ee;
+    font-family: 'Inconsolata', monospace;
+}
+
+a:active {
+    color: #032d03;
+    font-family: 'Inconsolata', monospace;
+}
