@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register With Us</title>
+</head>
+<body>
+<form method="POST" action="https://request-inspector.glitch.me/">
+    <label for="email">Enter your email:</label>
+    <input type="email" id="email"
+           pattern="+@globex\.com" size="30" required>
+    <br><br>
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password">
+     <br><br>
+
+    <textarea name="bio"></textarea>
+    <br><br>
+<!--    <input name="newsletter_signup" value="true" type="checkbox" checked>Sign Up For The Email Newsletter-->
+
+    <label >How did you hear about us:</label><br>
+    <input type="radio" name="radio" value="a">billboards<br>
+    <input type="radio" name="radio1" value="b">radio advertisement<br>
+    <input type="radio" name="radio2" value="c">internet advertisement<br>
+    <input type="radio" name="radio3" value="d">other<br>
+    <br>
+    <label>what browser are you using</label>
+    <select name="browser being used">
+        <option value="chrome">Google Chrome</option>
+        <option value="safari">Safari</option>
+        <option value="ff">Fire Fox</option>
+    </select>
+    <br><br>
+
+    <input type="submit">
+</form>
+</body>
+</html>
