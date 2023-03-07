@@ -1,109 +1,175 @@
-/*
-    The "page wrapper" is the outermost container for the page. It mimics
-    the behavior of the body tag, but is a div so that it can be styled
-    with more flexibility than the body tag.
-*/
+/*!**/
+/*    The "page wrapper" is the outermost container for the page. It mimics*/
+/*    the behavior of the body tag, but is a div so that it can be styled*/
+/*    with more flexibility than the body tag.*/
+/**!*/
 .page-wrapper {
     min-height: 100vh;
-    display:flex;
-    flex-direction: column;
-
-
-}
-
-/*
-    The "container", sometimes referred to as a "section", is a container
-    element (semantic when applicable) that vertically separates different
-    areas on the page based on their purpose or topic. It can allow different
-    background colors and properties for each section that help users associate
-    content within it as belonging to the same subject.
-*/
-.container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    row-gap: 20px;
-    align-items: center;
+
+}
+/*}*/
+
+/*!**/
+/*    The "container", sometimes referred to as a "section", is a container*/
+/*    element (semantic when applicable) that vertically separates different*/
+/*    areas on the page based on their purpose or topic. It can allow different*/
+/*    background colors and properties for each section that help users associate*/
+/*    content within it as belonging to the same subject.*/
+/**!*/
+/*.container {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    width: 100%;*/
+/*    row-gap: 20px;*/
+/*    align-items: center;*/
+/*}*/
+
+/*!* Combo classes to extend the container's versatility *!*/
+/*.container.grow {*/
+/*    flex: 1 0 0;*/
+/*}*/
+/*.container.justify-center {*/
+/*    justify-content: center;*/
+/*}*/
+
+/*!**/
+/*    The "row" is a container element that horizontally separates its*/
+/*    children, which are usually columns. It also performs a secondary role*/
+/*    of keeping the content of the site within a reasonable width, so that*/
+/*    wider screens don't disrupt the intended layout.*/
+/**!*/
+/*.row {*/
+/*    width: 100%;*/
+/*    max-width: 1100px;*/
+/*    display: flex;*/
+/*    padding: 0 20px;*/
+/*    gap: 20px;*/
+/*}*/
+/*!* Combo classes to extend the row's versatility *!*/
+/*.row.full-width {*/
+/*    max-width: unset;*/
+/*}*/
+/*.row.align-center {*/
+/*    align-items: center;*/
+/*}*/
+/*.row.align-top {*/
+/*    align-items: start;*/
+/*}*/
+/*.row.align-bottom {*/
+/*    align-items: end;*/
+/*}*/
+/*.row.justify-center {*/
+/*    justify-content: center;*/
+/*}*/
+/*.row.justify-right {*/
+/*    justify-content: end;*/
+/*}*/
+/*.row.justify-space-between {*/
+/*    justify-content: space-between;*/
+/*}*/
+/*.row.no-padding {*/
+/*    padding: unset;*/
+/*}*/
+/*.row.no-gap {*/
+/*    gap: unset;*/
+/*}*/
+
+/*!**/
+/*    The "column" is a container element that vertically separates its*/
+/*    children, which are usually content elements. When paired with sibling columns,*/
+/*    it allows for the creation of a flexible grid system that can be used*/
+/*    to create a variety of layouts.*/
+/**!*/
+/*.column {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    flex: 1 0 0;*/
+/*}*/
+/*!* Combo classes to extend the column's versatility *!*/
+/*.column.shrink{*/
+/*    flex: 0 1 auto;*/
+/*}*/
+/*.column.text-center {*/
+/*    text-align: center;*/
+/*}*/
+/*.column.align-center {*/
+/*    align-items: center;*/
+/*}*/
+/*.column.align-right {*/
+/*    align-items: end;*/
+/*}*/
+/*.column.justify-center {*/
+/*    justify-content: center;*/
+/*}*/
+/*.column.justify-space-between {*/
+/*    justify-content: space-between;*/
+/*}*/
+/* Use a more-intuitive box-sizing model*/
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-/* Combo classes to extend the container's versatility */
-.container.grow {
-    flex: 1 0 0;
-}
-.container.justify-center {
-    justify-content: center;
+/* Removes margin/padding from ALL elements */
+* {
+    margin: 0;
 }
 
-/*
-    The "row" is a container element that horizontally separates its
-    children, which are usually columns. It also performs a secondary role
-    of keeping the content of the site within a reasonable width, so that
-    wider screens don't disrupt the intended layout.
-*/
-.row {
-    width: 100%;
-    max-width: 1100px;
-    display: flex;
-    padding: 0 20px;
-    gap: 20px;
-}
-/* Combo classes to extend the row's versatility */
-.row.full-width {
-    max-width: unset;
-}
-.row.align-center {
-    align-items: center;
-}
-.row.align-top {
-    align-items: start;
-}
-.row.align-bottom {
-    align-items: end;
-}
-.row.justify-center {
-    justify-content: center;
-}
-.row.justify-right {
-    justify-content: end;
-}
-.row.justify-space-between {
-    justify-content: space-between;
-}
-.row.no-padding {
-    padding: unset;
-}
-.row.no-gap {
-    gap: unset;
+/* Typographic tweaks!
+ Add accessible line-height (spaces text apart, top/bottom) and Improve text rendering
+ BUT can sometimes make font look too thin
+ AND webkit property only works on Chrome/Firefox */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 
-/*
-    The "column" is a container element that vertically separates its
-    children, which are usually content elements. When paired with sibling columns,
-    it allows for the creation of a flexible grid system that can be used
-    to create a variety of layouts.
-*/
-.column {
-    display: flex;
-    flex-direction: column;
-    flex: 1 0 0;
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    hyphens: auto;
 }
-/* Combo classes to extend the column's versatility */
-.column.shrink{
-    flex: 0 1 auto;
+
+/* Improved / Sensible media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
 }
-.column.text-center {
-    text-align: center;
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
 }
-.column.align-center {
-    align-items: center;
+
+/* prevents a child element from growing wider than the parent element */
+*, *::before, *::after {
+    box-sizing: border-box;
 }
-.column.align-right {
-    align-items: end;
+
+/* Instructs these elements to inherit their parent's font */
+input, button, textarea, select {
+    font: inherit;
 }
-.column.justify-center {
-    justify-content: center;
+
+/* removes spacing between cells and inherit colors in tables */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-color: inherit;
 }
-.column.justify-space-between {
-    justify-content: space-between;
+
+/* Hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+    cursor: pointer;
+}
+
+/* removes underline(decoration) and color(unset = blank state) */
+/* DON'T want hyperlinks underlined by default */
+/* unset = i will address this, later */
+a, a:visited {
+    text-decoration: none;
+    color: unset;
 }
 
