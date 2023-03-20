@@ -6,15 +6,60 @@
 </head>
 <body>
 <h1>Konami Code</h1>
+<p>Please type something into this form:</p>
+<form>
+    <input type="text" id="textfield" name="textfield" placeholder="Type Here"/>
 
+</form>
 <script src="js/jquery-3.6.4.min.js"></script>
 <script>
   "use strict";
+  const global = {
+      konami: function() {
+          let konamikeys = [38,38,40,40,37,39,37,39,66,65,13],
+              started = false,
+              count = 0;
 
-  $(document).keyup(function(event){
-    console.log(event.keyCode);
-  });
+          $(document).keydown(function(e){
+              let reset = function() {
+                  started = false;
+                  count = 0;
+              };
+
+             let key = e.keyCode;
+
+              //check if first key in sequence was pressed.
+              if(!started){
+                  if(key == 38){
+                      started = true;
+                  }
+              }
+
+              // If pressed yur good to go
+              if (started){
+
+                  if (konamikeys[count] == key){
+                      count++;
+                  } else {
+                      // Incorrect key, restart.
+                      reset();
+                  }
+                  if (count == 11){
+                      // Success!
+                      alert('Konami code entered! You have added 30 lives!');
+
+                      reset();
+                  }
+              } else {
+                  reset();
+              }
+          });
+      }
+  }
+
+  global.konami();
+
+
 </script>
-
 </body>
 </html>
