@@ -2,7 +2,24 @@
 .invisible{
     visibility: hidden;
 }
-dt{
-
-    background-color: #90ab8d;
+/*dt{*/
+/*    background-color: #90ab8d;*/
+/*}*/
+img{
+    border: 15px solid #0b420e;
+    width:33%;
+}
+.picture-frame{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    min-height: 182px;
+ }
+picture{
+    border: 15px solid #0b420e;
+}
+.images-wrapper{
+    margin: 25px;
+    display: flex;
+    flex-direction: row;
 }
