@@ -1,0 +1,82 @@
+[
+    {
+        "title": "Hammer",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 20
+    }, {
+        "title": "Drill",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "powered"
+        ],
+        "price": 100
+    }, {
+        "title": "Mower",
+        "quantity": 5,
+        "categories": [
+            "tool",
+            "gas",
+            "outdoor"
+        ],
+        "price": 200
+    }, {
+        "title": "Screwdrivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Nail",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 1
+    },
+    {
+        "title": "beans",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 1
+    },
+    {
+        "title": "pur",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 1
+    },
+    {
+        "title": "slay",
+        "quantity": 666,
+        "categories": [
+            "deadly"
+        ],
+        "price": 420
+    },
+    {
+        "title": "boo",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 1
+    },
+    {
+        "title": "slay",
+        "quantity": 666,
+        "categories": [
+            "deadly"
+        ],
+        "price": 420
+    }
+]
+
