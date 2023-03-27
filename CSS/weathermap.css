@@ -1,7 +1,4 @@
 .page-wrapper{
-    /*margin: 5px;*/
-    /*padding: 5px;*/
-    background-color: rgba(141, 164, 143, 0.98);
     max-height: 100vh;
 }
 header{
@@ -12,34 +9,31 @@ header{
     padding: 5px;
     align-items: center;
     color: #FFFFFF;
-    /*background-color: rgba(141, 164, 143, 0.85);*/
 }
 .weather-wrapper{
     justify-content: start;
     align-self: center;
 }
-.search {
-    border-radius: 5px;
-    justify-content: center;
-    align-content: center;
-    height: 35px;
-    /*width:175px;*/
-}
-.search-bar, .search-button{
-    justify-content: center;
-    align-content: center;
-    align-self: center;
-    box-shadow:2px 2px 5px 0 rgb(62 93 59 / 60%);
-    border: unset;
-    background-color: #627263;
+/*.search {*/
+/*    border-radius: 5px;*/
+/*    justify-content: center;*/
+/*    align-content: center;*/
+/*    height: 35px;*/
+/*}*/
+/*.search-bar, .search-button{*/
+/*    justify-content: center;*/
+/*    align-content: center;*/
+/*    align-self: center;*/
+/*    box-shadow:2px 2px 5px 0 rgb(62 93 59 / 60%);*/
+/*    border: unset;*/
+/*    background-color: #627263;*/
 
-}
-.search-bar{
-    width:250px;
-
-    color: white;
-    padding: 10px;
-}
+/*}*/
+/*.search-bar{*/
+/*    width:250px;*/
+/*    color: white;*/
+/*    padding: 10px;*/
+/*}*/
 ::placeholder{
     color: #FFFFFF;
 }
@@ -54,21 +48,15 @@ header{
     flex: 1 0 0;
     display:flex;
     flex-direction: column;
-    /*max-height: 1400px;*/
-    /*overflow-y: hidden;*/
-    /*scroll-behavior: smooth;*/
 }
 .fiveday-forecast{
     background-color: rgba(141, 164, 143, 0.85);
     padding: 10px;
     border-radius: 5px;
-    /*margin:5px ;*/
     width: 225px;
     color: #030303;
     box-shadow:5px 5px 3px 0 #37493869;
     position: fixed;
-    /*top:65px;*/
-    /*margin:10px;*/
     z-index: 1;
     direction: ltr;
 }
@@ -79,7 +67,7 @@ header{
     border: 1px solid rgba(55, 73, 56, 0.7);
     border-radius: 9px;
     width: 225px;
-    margin:5px;
+    /*margin:5px;*/
     padding: 5px;
     background-color: rgba(92, 101, 90, 0.85);
     color: #ffffff;
@@ -97,7 +85,7 @@ header{
     width: 255px;
     direction:rtl;
     margin-bottom: 25px;
-    /*height: 75%;*/
+
 }
 
 .ch-wrapper{
@@ -117,14 +105,13 @@ header{
     align-self: center;
 }
 #map {
-    /*top: 0;*/
-    /*left:0;*/
-    position: absolute;
+    /*position: absolute;*/
     justify-content: end;
     align-self: end;
     align-content: end;
     height: 100%;
     min-width: 100%;
+    /*z-index: 0;*/
 }
 .row.header {
     position: relative;
@@ -142,13 +129,7 @@ header{
 /*.column>*{*/
 /*    pointer-events: none;*/
 /*}*/
-.map-wrapper{
-    justify-content: end;
-    align-self: end;
-    align-content: end;
-    width: 100vw;
-    height: 100%;
-}
+
 .card-temp{
     display: flex;
     justify-content: center;
@@ -168,6 +149,22 @@ header{
 .cp-wrapper{
     border: unset;
 }
-.row{
-   max-width:unset;
+.row {
+    max-width: unset;
+}
+input.mapboxgl-ctrl-geocoder--input{
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    box-shadow:2px 2px 5px 0 rgb(62 93 59 / 60%);
+    border: unset;
+    background-color: #627263;
+    z-index: 2;
+}
+svg.mapboxgl-ctrl-geocoder--icon {
+    fill: #ffffff;
+}
+div.widget-right.weather-right-type1.widget-right-brown{
+    z-index: 9;
+    position: absolute;
 }
