@@ -6,10 +6,9 @@
     <link rel="stylesheet" href="CSS/resets.css">
     <!-- Mapbox CSS -->
     <link rel="stylesheet" href="CSS/layout.css">
-<!--    <link rel="stylesheet" href="CSS/weathermap.css">-->
+    <link rel="stylesheet" href="CSS/weathermap.css">
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
 
-    <script src="js/keys.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js'></script>
     <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css' type='text/css' />
@@ -18,167 +17,153 @@
 <div class="page-wrapper">
     <div id="weather">
     </div>
-
-    <div id='map' style='width: 400px; height: 300px;'></div>
+    <div id='map'></div>
     <div id="forecast"></div>
-<!--    <div class="container grow">-->
-<!--&lt;!&ndash;        header start&ndash;&gt;-->
-<!--        <div class="row ">-->
-<!--            <div class="column">-->
-<!--                <div class="row ">-->
-<!--                    <header class="header row">-->
-<!--                        <div class="head-column weather-wrapper">-->
-<!--                            <h1 id='weatherHead' class="column">Weather</h1>-->
-<!--                        </div>-->
-<!--&lt;!&ndash;                        <form class="head-column search-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <input id='searchBar' class="search-bar search" type="text" placeholder="Location">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <button id="search-button" class="search-button search">Find</button>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </form>&ndash;&gt;-->
-<!--                        <div class="head-column head-city-wrapper">-->
-<!--                            <p id="headCity" class="head-city">Current city</p>-->
-<!--                        </div>-->
-<!--                    </header>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--&lt;!&ndash;        cards start&ndash;&gt;-->
-<!--        <div class="row grow">-->
-<!--            <div class="column">-->
-<!--                <div class="nav">-->
-<!--                    <div class="container grow nav-wrapper">-->
-<!--                        <h2 class="fiveday-forecast">Weekly Forecast</h2>-->
-<!--&lt;!&ndash;                        first card&ndash;&gt;-->
-<!--                        <div id="firstCard " class="card ">-->
-<!--&lt;!&ndash;                            <div class="ch-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <h2 class="card-header card-city">San Antonio</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="card-header card-date">date</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ct-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-temp">temp</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cd-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-description">description</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="chum-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-humidity">humidity</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cw-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-wind">wind</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cp-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-pressure">pressure</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--                        </div>-->
-<!--&lt;!&ndash;                        second card&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div id="cards" class="card cards">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ch-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <h2 class="card-header card-city">San Antonio</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="card-header card-date">date</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ct-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-temp">temp</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cd-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-description">description</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="chum-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-humidity">humidity</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cw-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-wind">wind</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cp-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-pressure">pressure</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        third card&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="card cards">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ch-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <h2 class="card-header card-city">San Antonio</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="card-header card-date">date</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ct-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-temp">temp</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cd-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-description">description</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="chum-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-humidity">humidity</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cw-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-wind">wind</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cp-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-pressure">pressure</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        forth card&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="card cards">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ch-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <h2 class="card-header card-city">San Antonio</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="card-header card-date">date</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ct-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-temp">temp</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cd-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-description">description</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="chum-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-humidity">humidity</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cw-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-wind">wind</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cp-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-pressure">pressure</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--&lt;!&ndash;&lt;!&ndash;                        fifth card&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;                        <div class="card cards">&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ch-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <h2 class="card-header card-city">San Antonio</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;                                <div class="card-header card-date">date</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="ct-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-temp">temp</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cd-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-description">description</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="chum-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class=" card-humidity">humidity</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cw-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-wind">wind</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                            <div class="cp-wrapper">&ndash;&gt;-->
-<!--&lt;!&ndash;                                <p class="card-pressure">pressure</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                            </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                        </div>&ndash;&gt;-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--&lt;!&ndash;      nav end&ndash;&gt;-->
-<!--&lt;!&ndash;        map&ndash;&gt;-->
-<!--    </div>-->
-<!--</div>-->
-<!--<div id="openweathermap-widget-15"></div>-->
-
-<script >
-    mapboxgl.accessToken = MAPBOX_APPID;
-    let map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/navigation-night-v1', // style URL
-        zoom: 9, // starting zoom
-        center: [-98.4916, 29.4252] // [lng, lat]
-    });
-</script>
-// <!--<script>window.myWidgetParam ? window.myWidgetParam : window.myWidgetParam = [];  window.myWidgetParam.push({id: 15,cityid: '4726206',appid: '4bf3415442b8a62126d1ad7215035235',units: 'metric',containerid: 'openweathermap-widget-15',  });  (function() {var script = document.createElement('script');script.async = true;script.charset = "utf-8";script.src = "//openweathermap.org/themes/openweathermap/assets/vendor/owm/js/weather-widget-generator.js";var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(script, s);  })();</script>-->
+    <div class="container grow">
+<!--        header start-->
+        <div class="row ">
+            <div class="column">
+                <div class="row ">
+                    <header class="header row">
+                        <div class="head-column weather-wrapper">
+                            <h1 id='weatherHead' class="column">Weather</h1>
+                        </div>
+<!--                        <form class="head-column search-wrapper">-->
+<!--                            <input id='searchBar' class="search-bar search" type="text" placeholder="Location">-->
+<!--                            <button id="search-button" class="search-button search">Find</button>-->
+<!--                        </form>-->
+                        <div class="head-column head-city-wrapper">
+                            <p id="headCity" class="head-city">Current city</p>
+                        </div>
+                    </header>
+                </div>
+            </div>
+        </div>
+<!--        cards start-->
+        <div class="row grow">
+            <div class="column">
+                <div class="nav">
+                    <div class="container grow nav-wrapper">
+                        <h2 class="fiveday-forecast">Weekly Forecast</h2>
+<!--                        first card-->
+                        <div id="firstCard " class="card ">
+                            <div class="ch-wrapper">
+                                <h2 class="card-header card-city">San Antonio</h2>
+                                <div class="card-header card-date">date</div>
+                            </div>
+                            <div class="ct-wrapper">
+                                <p class="card-temp">temp</p>
+                            </div>
+                            <div class="cd-wrapper">
+                                <p class=" card-description">description</p>
+                            </div>
+                            <div class="chum-wrapper">
+                                <p class=" card-humidity">humidity</p>
+                            </div>
+                            <div class="cw-wrapper">
+                                <p class="card-wind">wind</p>
+                            </div>
+                            <div class="cp-wrapper">
+                                <p class="card-pressure">pressure</p>
+                            </div>
+                        </div>
+<!--                        second card-->
+                        <div id="cards" class="card cards">
+                            <div class="ch-wrapper">
+                                <h2 class="card-header card-city">San Antonio</h2>
+                                <div class="card-header card-date">date</div>
+                            </div>
+                            <div class="ct-wrapper">
+                                <p class="card-temp">temp</p>
+                            </div>
+                            <div class="cd-wrapper">
+                                <p class=" card-description">description</p>
+                            </div>
+                            <div class="chum-wrapper">
+                                <p class=" card-humidity">humidity</p>
+                            </div>
+                            <div class="cw-wrapper">
+                                <p class="card-wind">wind</p>
+                            </div>
+                            <div class="cp-wrapper">
+                                <p class="card-pressure">pressure</p>
+                            </div>
+                        </div>
+<!--                        third card-->
+                        <div class="card cards">
+                            <div class="ch-wrapper">
+                                <h2 class="card-header card-city">San Antonio</h2>
+                                <div class="card-header card-date">date</div>
+                            </div>
+                            <div class="ct-wrapper">
+                                <p class="card-temp">temp</p>
+                            </div>
+                            <div class="cd-wrapper">
+                                <p class=" card-description">description</p>
+                            </div>
+                            <div class="chum-wrapper">
+                                <p class=" card-humidity">humidity</p>
+                            </div>
+                            <div class="cw-wrapper">
+                                <p class="card-wind">wind</p>
+                            </div>
+                            <div class="cp-wrapper">
+                                <p class="card-pressure">pressure</p>
+                            </div>
+                        </div>
+<!--                        forth card-->
+                        <div class="card cards">
+                            <div class="ch-wrapper">
+                                <h2 class="card-header card-city">San Antonio</h2>
+                                <div class="card-header card-date">date</div>
+                            </div>
+                            <div class="ct-wrapper">
+                                <p class="card-temp">temp</p>
+                            </div>
+                            <div class="cd-wrapper">
+                                <p class=" card-description">description</p>
+                            </div>
+                            <div class="chum-wrapper">
+                                <p class=" card-humidity">humidity</p>
+                            </div>
+                            <div class="cw-wrapper">
+                                <p class="card-wind">wind</p>
+                            </div>
+                            <div class="cp-wrapper">
+                                <p class="card-pressure">pressure</p>
+                            </div>
+                        </div>
+<!--                        fifth card-->
+                        <div class="card cards">
+                            <div class="ch-wrapper">
+                                <h2 class="card-header card-city">San Antonio</h2>
+                                <div class="card-header card-date">date</div>
+                            </div>
+                            <div class="ct-wrapper">
+                                <p class="card-temp">temp</p>
+                            </div>
+                            <div class="cd-wrapper">
+                                <p class=" card-description">description</p>
+                            </div>
+                            <div class="chum-wrapper">
+                                <p class=" card-humidity">humidity</p>
+                            </div>
+                            <div class="cw-wrapper">
+                                <p class="card-wind">wind</p>
+                            </div>
+                            <div class="cp-wrapper">
+                                <p class="card-pressure">pressure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--      nav end-->
+<!--        map-->
+    </div>
+</div>
 <script src="js/jquery-3.6.4.min.js"></script>
-<script src="js/utils.js"></script>
-<script src="js/weather-map.js"></script>
+<script type='module' src="js/weather-map.js"></script>
 </body>
 </html>
